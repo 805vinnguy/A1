@@ -1,0 +1,14 @@
+*.swp
+.DS_Store
+*.icloud
+*.o
+*.s
+*.sym
+*.obj
+*.bin
+*.hex
+*.dSYM
+a.out
+*.pyc
+__pycache__
+*.class
