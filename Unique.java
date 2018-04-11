@@ -21,23 +21,38 @@ public class Unique {
             list.add(sc.nextInt());
         }
         sc.close();
-        System.out.println(unique(list));
+        System.out.println(unique(list, 0, list.size()-1));
     }
 
-    public static int unique(ArrayList<Integer> list) {
-        int i, uniq = list.get(0);
-        int len = list.size();
-        if(len == 1) {
-            return uniq;
+    public static int unique(ArrayList<Integer> list, int min, int max) {
+        int midpt_index = (min+max)/2;
+        int midpt = list.get(midpt_index);
+        int next;
+        int prev;
+        if(list.size() == 1) {
+            return list.get(midpt_index);
         }
-        for(i = 0; i < len-1; i+=2) {
-            if(i+1 == len) {
-                uniq = list.get(i);
+        next = list.get(midpt_index+1);
+        prev = list.get(midpt_index-1);
+        if(midpt != next && midpt != prev) {
+            return list.get(midpt_index);
+        }
+        if(midpt_index % 2 == 0) {//midpt_index is even
+            if(midpt == next) {
+                min = midpt_index+1;
             }
-            if(list.get(i) != list.get(i+1)) {
-                uniq =  list.get(i);
+            else {
+                max = midpt_index-2;
             }
         }
-        return uniq;
+        else {//midpt_index is odd
+            if(midpt == next) {
+                max = midpt_index-1;
+            }
+            else {
+                min = midpt_index+1;
+            }
+        }
+        return unique(list, min, max);
     }
 }
