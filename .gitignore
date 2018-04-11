@@ -12,3 +12,5 @@ a.out
 *.pyc
 __pycache__
 *.class
+asgn0_driverSample
+*.tar
