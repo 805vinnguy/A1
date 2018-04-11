@@ -12,8 +12,8 @@ import java.io.*;
 public class Unique {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        Scanner sc = new Scanner(new File(args[1]));
-        sc.useDelimiter(",");
+        Scanner sc = new Scanner(new File(args[0]));
+        sc.useDelimiter(", ");
 
         while(sc.hasNextInt()) {
             list.add(sc.nextInt());
