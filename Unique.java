@@ -13,8 +13,10 @@ public class Unique {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Integer> list = new ArrayList<Integer>();
         Scanner sc = new Scanner(new File(args[0]));
+        if(sc.hasNextInt()) {
+            list.add(sc.nextInt());
+        }
         sc.useDelimiter(", ");
-
         while(sc.hasNextInt()) {
             list.add(sc.nextInt());
         }
@@ -26,7 +28,7 @@ public class Unique {
         int i, uniq = list.get(0);
         int len = list.size();
         if(len == 1) {
-            uniq = list.get(0);
+            return uniq;
         }
         for(i = 0; i < len-1; i+=2) {
             if(i+1 == len) {
