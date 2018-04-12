@@ -15,7 +15,7 @@ public class MergeSort {
         int[] test;
         long t_before;
         long t_after;
-        for(; size < 20000; size+=20) {
+        for(; size < 20001; size+=20) {
             test = rnglist(size);
             t_before = System.currentTimeMillis();
             test = mergesort(test);

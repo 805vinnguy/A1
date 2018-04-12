@@ -17,3 +17,7 @@ asgn0_driverSample
 myout1.txt
 myout2.txt
 myout3.txt
+~$Runtime.xlsx
+Runtime.xlsx
+*.docx
+*.pdf
